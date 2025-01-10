@@ -8,6 +8,7 @@ export default defineConfig({
   build: {
     outDir: "docs", // ビルド結果を格納するディレクトリ
   },
+  base: "https://naga-kazu.github.io/plofile-analyze/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
