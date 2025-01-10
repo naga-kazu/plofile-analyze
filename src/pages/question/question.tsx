@@ -34,9 +34,7 @@ export default function Question() {
             <QuestionTitle
               title={
                 <span>
-                  あなたはファーストメッセージを送りました。
-                  <br />
-                  返信率はどのくらいですか？
+                  あなたはファーストメッセージを送りました。返信率はどのくらいですか？
                 </span>
               }
             />
