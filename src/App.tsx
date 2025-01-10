@@ -9,7 +9,7 @@ export default function QuizPage() {
   return (
     <BrowserRouter>
       <FixedHeader />
-      <div className="px-6 pt-24 pb-10 bg-background flex items-center justify-center">
+      <div className="px-4 pt-24 pb-10 bg-background flex items-center justify-center">
         <Routes>
           <Route path={`${BASE_URL}/`} element={<Question />} />
           <Route path={`${BASE_URL}/empty`} element={<Empty />} />

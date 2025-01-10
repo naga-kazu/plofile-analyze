@@ -15,10 +15,10 @@ export function AnswerButton({
 }: AnswerButtonProps) {
   return (
     <Button
-      className={classNames("w-full py-6 text-lg", {
-        "bg-accent": isSelected,
-        "bg-gray-200": !isSelected,
-      })}
+      className={classNames(
+        "w-full py-6 text-lg shadow-md",
+        isSelected && "bg-accent text-white"
+      )}
       onClick={() => setSelectedOption(title)}
       variant="secondary"
     >

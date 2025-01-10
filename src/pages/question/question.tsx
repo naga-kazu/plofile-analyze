@@ -23,14 +23,14 @@ export default function Question() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   return (
-    <div className="space-y-8">
+    <div className="px-4 space-y-8">
       <Card className="w-full max-w-md mx-auto relative">
         <CardContent className="">
-          <div className="absolute -top-5 -left-5  rounded-full bg-white flex items-center justify-center p-3 border-2 border-primary">
+          <div className="absolute -top-6 -left-6  rounded-full bg-white flex items-center justify-center p-3 border-2 border-primary">
             <span className="font-medium">2/5</span>
           </div>
 
-          <div className="mt-8 space-y-6">
+          <div className="mt-6 space-y-6">
             <QuestionTitle
               title={
                 <span>
@@ -57,7 +57,7 @@ export default function Question() {
         </CardContent>
       </Card>
 
-      <div className="space-y-3">
+      <div className="space-y-3 mx-7">
         {answerVariable.map((answer) => (
           <AnswerButton
             key={answer.key}
@@ -68,7 +68,7 @@ export default function Question() {
         ))}
       </div>
 
-      <Button className="w-full py-6 text-lg bg-gray-700 hover:bg-gray-600">
+      <Button className="w-full py-8 text-lg bg-gray-700 hover:bg-gray-600">
         次へ
       </Button>
     </div>
