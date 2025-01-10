@@ -5,5 +5,5 @@ type Props = {
 };
 
 export function QuestionTitle({ title }: Props) {
-  return <h2 className="text-xl font-bold text-center">{title}</h2>;
+  return <h2 className="text-xl font-bold">{title}</h2>;
 }
