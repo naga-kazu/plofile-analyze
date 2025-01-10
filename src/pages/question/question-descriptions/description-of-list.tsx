@@ -1,12 +1,16 @@
 type Props = {
-  title: string;
+  items: string[];
 };
 
-export function DescriptionOfList({ title }: Props) {
+export function DescriptionOfList({ items }: Props) {
   return (
-    <li className="flex items-start gap-2">
-      <span className="block w-2 h-2 mt-2 bg-[#F4B460] rounded-sm" />
-      <span>{title}</span>
-    </li>
+    <ul className="space-y-1 list-none">
+      {items.map((item) => (
+        <li key={item} className="items-start flex text-sm">
+          <span className="flex-shrink-0 block w-3 h-3 mt-1 mr-1 bg-[#F4B460] rounded-sm" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
   );
 }

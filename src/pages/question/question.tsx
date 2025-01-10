@@ -25,18 +25,16 @@ export default function Question() {
   return (
     <div className="space-y-8">
       <Card className="w-full max-w-md mx-auto relative">
-        <CardContent className="p-6">
-          <div className="absolute -top-6 -left-6  rounded-full bg-white flex items-center justify-center p-4 border-2 border-primary">
-            <span className="text-lg font-medium">2/5</span>
+        <CardContent className="">
+          <div className="absolute -top-5 -left-5  rounded-full bg-white flex items-center justify-center p-3 border-2 border-primary">
+            <span className="font-medium">2/5</span>
           </div>
 
-          <div className="space-y-8 mt-12">
+          <div className="mt-8 space-y-6">
             <QuestionTitle
               title={
                 <span>
-                  あなたはファーストメッセージを
-                  <br />
-                  送りました。
+                  あなたはファーストメッセージを送りました。
                   <br />
                   返信率はどのくらいですか？
                 </span>
@@ -44,8 +42,12 @@ export default function Question() {
             />
             <div className="bg-gray-100 p-4 rounded-sm space-y-10">
               <QuestionDescription title="ファーストメッセージって？">
-                <DescriptionOfList title="マッチして最初に送るメッセージのこと" />
-                <DescriptionOfList title="「ターゲット層に合ったメッセージ」が送れているかわかります。" />
+                <DescriptionOfList
+                  items={[
+                    "マッチして最初に送るメッセージのこと",
+                    "「ターゲット層に合ったメッセージ」が送れているかわかります。",
+                  ]}
+                />
               </QuestionDescription>
               <QuestionDescription title="計算式">
                 <DescriptionOfEmphasis emphasisTitle="返信率=返信数÷総マッチ数" />
