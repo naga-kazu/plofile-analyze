@@ -1,9 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router";
 import FixedHeader from "./components/header";
 import Question from "./pages/question/question";
-import { Empty } from "./pages/empty";
-
-const BASE_PATH = "https://naga-kazu.github.io/plofile-analyze";
 
 export default function QuizPage() {
   return (
