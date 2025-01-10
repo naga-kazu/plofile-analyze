@@ -23,11 +23,11 @@ export default function Question() {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   return (
-    <div className="px-1 mt-4 space-y-8">
+    <div className="px-1 mt-3 space-y-8">
       <Card className="w-full max-w-md mx-auto relative">
         <CardContent className="">
           <div className="absolute -top-7 -left-5  rounded-full bg-white flex items-center justify-center p-4 border-2 border-primary">
-            <span className="font-medium">2/5</span>
+            <span>2/5</span>
           </div>
 
           <div className="mt-10 space-y-6">
