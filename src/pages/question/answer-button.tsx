@@ -17,7 +17,7 @@ export function AnswerButton({
     <Button
       className={classNames(
         "w-full py-6 text-lg shadow-md",
-        isSelected && "bg-accent text-white"
+        isSelected && "bg-accent text-accent-foreground"
       )}
       onClick={() => setSelectedOption(title)}
       variant="secondary"
