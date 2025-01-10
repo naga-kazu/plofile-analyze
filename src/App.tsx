@@ -7,7 +7,8 @@ const BASE_PATH = "https://naga-kazu.github.io/plofile-analyze";
 
 export default function QuizPage() {
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
+    <div>
       <FixedHeader />
       <div className="min-h-screen bg-background p-8 flex items-center justify-center">
         <Question />
@@ -16,6 +17,7 @@ export default function QuizPage() {
           <Route path={`${BASE_PATH}/empty-page`} element={<Empty />} />
         </Routes> */}
       </div>
-    </BrowserRouter>
+    </div>
+    // </BrowserRouter>
   );
 }
