@@ -57,7 +57,7 @@ export default function Question() {
         </CardContent>
       </Card>
 
-      <div className="space-y-3 mx-7">
+      <div className="space-y-3 mx-6">
         {answerVariable.map((answer) => (
           <AnswerButton
             key={answer.key}
@@ -68,9 +68,9 @@ export default function Question() {
         ))}
       </div>
 
-      <Button className="w-full py-8 text-lg bg-gray-700 hover:bg-gray-600">
-        次へ
-      </Button>
+      <div className="mx-4">
+        <Button className="w-full py-8 text-lg bg-gray-700">次へ</Button>
+      </div>
     </div>
   );
 }
