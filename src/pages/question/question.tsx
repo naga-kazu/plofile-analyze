@@ -30,7 +30,7 @@ export default function Question() {
             <span>2/5</span>
           </div>
 
-          <div className="mt-10 space-y-6">
+          <div className="mt-10 space-y-7">
             <QuestionTitle
               title={
                 <span>
@@ -38,7 +38,7 @@ export default function Question() {
                 </span>
               }
             />
-            <div className="bg-gray-100 p-4 rounded-sm space-y-10">
+            <div className="bg-gray-100 p-4 rounded-sm space-y-11">
               <QuestionDescription title="ファーストメッセージって？">
                 <DescriptionOfList
                   items={[
