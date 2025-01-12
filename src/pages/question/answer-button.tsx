@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 type AnswerButtonProps = {
   isSelected: boolean;
-  key: string;
+  key: number;
   title: string;
   setSelectedOption: (key: string) => void;
 };

@@ -6,59 +6,67 @@ import { QuestionDescription } from "./question-description";
 import { DescriptionOfList } from "./question-descriptions/description-of-list";
 import { DescriptionOfEmphasis } from "./question-descriptions/description-of-emphasis";
 import { QuestionTitle } from "./question-title";
+import { Props as EmphasisProps } from "./question-descriptions/description-of-emphasis";
+import { Props as ListProps } from "./question-descriptions/description-of-list";
+import {
+  DescriptionOfTable,
+  Props as TableProps,
+} from "./question-descriptions/description-of-table";
 
 export type AnswerOption = {
-  key: string;
   title: string;
 };
 
-const answerVariable: AnswerOption[] = [
-  { key: "1", title: "80%以上" },
-  { key: "2", title: "60~80%" },
-  { key: "3", title: "40~60%以下" },
-  { key: "4", title: "40%未満" },
-];
+export type QuestionContent =
+  | { type: "list"; item: ListProps }
+  | { type: "emphasis"; item: EmphasisProps }
+  | { type: "table"; item: TableProps };
 
-export default function Question() {
+export type Question = {
+  title: string;
+  content: QuestionContent;
+};
+
+export type Props = {
+  step: number;
+  totalSteps: number;
+  title: string;
+  questions: Question[];
+  answerOptions: AnswerOption[];
+};
+
+export function Question({
+  step,
+  totalSteps,
+  title,
+  questions,
+  answerOptions,
+}: Props) {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   return (
     <div className="px-1 mt-3 space-y-8">
       <Card className="w-full max-w-md mx-auto relative">
         <CardContent className="">
-          <div className="absolute -top-7 -left-5  rounded-full bg-white flex items-center justify-center p-4 border-2 border-primary">
-            <span>2/5</span>
+          <div className="absolute -top-7 -left-5 rounded-full bg-white flex items-center justify-center p-4 border-2 border-primary">
+            <span>{`${step}/${totalSteps}`}</span>
           </div>
 
           <div className="mt-10 space-y-7">
-            <QuestionTitle
-              title={
-                <span>
-                  あなたはファーストメッセージを送りました。返信率はどのくらいですか？
-                </span>
-              }
-            />
+            <QuestionTitle title={<span>{title}</span>} />
             <div className="bg-gray-100 p-4 rounded-sm space-y-11">
-              <QuestionDescription title="ファーストメッセージって？">
-                <DescriptionOfList
-                  items={[
-                    "マッチして最初に送るメッセージのこと",
-                    "「ターゲット層に合ったメッセージ」が送れているかわかります。",
-                  ]}
-                />
-              </QuestionDescription>
-              <QuestionDescription title="計算式">
-                <DescriptionOfEmphasis emphasisTitle="返信率=返信数÷総マッチ数" />
-              </QuestionDescription>
+              {questions.map((question, index) => {
+                return renderQuestionDescription(question, index);
+              })}
             </div>
           </div>
         </CardContent>
       </Card>
 
       <div className="space-y-3 mx-6">
-        {answerVariable.map((answer) => (
+        {answerOptions.map((answer, index) => (
           <AnswerButton
-            key={answer.key}
+            key={index}
             title={answer.title}
             isSelected={selectedOption === answer.title}
             setSelectedOption={setSelectedOption}
@@ -72,3 +80,27 @@ export default function Question() {
     </div>
   );
 }
+
+const renderQuestionDescription = (question: Question, index: number) => {
+  const content = question.content;
+  const renderContent = () => {
+    switch (content.type) {
+      case "list":
+        return <DescriptionOfList items={content.item.items} />;
+      case "emphasis":
+        return (
+          <DescriptionOfEmphasis emphasisTitle={content.item.emphasisTitle} />
+        );
+      case "table":
+        return <DescriptionOfTable />;
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <QuestionDescription key={index} title={question.title}>
+      {renderContent()}
+    </QuestionDescription>
+  );
+};
