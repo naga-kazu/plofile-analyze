@@ -15,7 +15,7 @@ const router = createBrowserRouter([
         <ScrollRestoration />
         <FixedHeader />
         <div className="w-full max-w-md min-w-80 mx-auto mt-3 px-4 pt-20 pb-10 bg-background">
-          <Outlet /> {/* 子ルートがここに表示される */}
+          <Outlet />
         </div>
       </>
     ),

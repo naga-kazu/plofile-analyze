@@ -51,19 +51,53 @@ const questions2: QuestionDescription[] = [
 const answerOptions2: AnswerOption[] = [
   { title: "80%以上" },
   { title: "60~80%" },
-  { title: "40~60%以下" },
+  { title: "40~60%" },
   { title: "40%未満" },
 ];
 
 const questions3: QuestionDescription[] = [
   {
-    title: "ファーストメッセージって？",
+    title: "バンゲって？",
     content: {
       type: "list",
       item: {
         items: [
-          "マッチして最初に送るメッセージのこと",
-          "「ターゲット層に合ったメッセージ」が送れているかわかります。",
+          "マッチングアプリ以外の連絡先（LINE・Instagram等）を交換すること",
+          "マッチした相手があなたにどのクr対価値を感じている？がわかります。",
+        ],
+      },
+    },
+  },
+  {
+    title: "これが低い人は？",
+    content: {
+      type: "list",
+      item: { 
+        items: [
+          "テンプレメッセージを使っている",
+          "メッセージに違和感がある可能性あり！",
+        ],
+       },
+    },
+  },
+];
+
+const answerOptions3: AnswerOption[] = [
+  { title: "60%以上" },
+  { title: "40~60%" },
+  { title: "20~40%" },
+  { title: "20%未満" },
+];
+
+const questions4: QuestionDescription[] = [
+  {
+    title: "ドタキャンされやすい人は？",
+    content: {
+      type: "list",
+      item: {
+        items: [
+          "メッセージや電話での関係構築が足りない",
+          "アポへの期待値を高められていない可能性あり！",
         ],
       },
     },
@@ -72,15 +106,44 @@ const questions3: QuestionDescription[] = [
     title: "計算式",
     content: {
       type: "emphasis",
-      item: { emphasisTitle: "返信率=返信数÷総マッチ数" },
+      item: { emphasisTitle: "ドタキャン率=ドタキャン数÷アポ決定数" },
     },
   },
 ];
 
-const answerOptions3: AnswerOption[] = [
+const answerOptions4: AnswerOption[] = [
+  { title: "80%以上" },
+  { title: "50~80%" },
+  { title: "20~50%" },
+  { title: "20%未満" },
+];
+
+const questions5: QuestionDescription[] = [
+  {
+    title: "アポ勝率って？",
+    content: {
+      type: "list",
+      item: {
+        items: [
+          "初めてあった人があなたに価値を感じてくれたかを表す指標",
+          "これが低いと「写真の盛りすぎ」「飲んばがない」「トーク力が低い」可能性あり！",
+        ],
+      },
+    },
+  },
+  {
+    title: "計算式",
+    content: {
+      type: "emphasis",
+      item: { emphasisTitle: "アポ勝率=ワンナイト数 or 二回目デート数÷アポ数" },
+    },
+  },
+];
+
+const answerOptions5: AnswerOption[] = [
   { title: "80%以上" },
   { title: "60~80%" },
-  { title: "40~60%以下" },
+  { title: "40~60%" },
   { title: "40%未満" },
 ];
 
@@ -102,12 +165,12 @@ export const questions=[
   },
   {
     title: "アポの日程も決まり、いざ当日。相手からいけない連絡が...\nこのようなドタキャン率はどのくらいですか？",
-    questions: questions3,
-    answerOptions: answerOptions3,
+    questions: questions4,
+    answerOptions: answerOptions4,
   },
   {
     title: "アポの勝率はどのくらいですか？",
-    questions: questions3,
-    answerOptions: answerOptions3,
+    questions: questions5,
+    answerOptions: answerOptions5,
   },
 ]
