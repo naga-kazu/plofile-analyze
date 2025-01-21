@@ -1,0 +1,22 @@
+.arrow {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  margin-top: 6.4px;
+  border-radius: 9999px;
+  background-color: rgb(107 114 128);
+}
+
+.arrow::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 0.5px);
+  right: 0;
+  width: 10px;
+  height: 1px;
+  border-radius: 9999px;
+  background-color:rgb(107 114 128);
+  transform: rotate(45deg);
+  transform-origin: calc(100% - 0.5px) 50%;
+}

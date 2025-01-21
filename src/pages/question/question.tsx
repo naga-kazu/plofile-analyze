@@ -12,6 +12,7 @@ import {
   DescriptionOfTable,
   Props as TableProps,
 } from "./question-descriptions/description-of-table";
+import { useNavigate } from "react-router";
 
 export type AnswerOption = {
   title: string;
@@ -22,7 +23,7 @@ export type QuestionContent =
   | { type: "emphasis"; item: EmphasisProps }
   | { type: "table"; item: TableProps };
 
-export type Question = {
+export type QuestionDescription = {
   title: string;
   content: QuestionContent;
 };
@@ -31,8 +32,9 @@ export type Props = {
   step: number;
   totalSteps: number;
   title: string;
-  questions: Question[];
+  questions: QuestionDescription[];
   answerOptions: AnswerOption[];
+  nextPath: string;
 };
 
 export function Question({
@@ -41,12 +43,17 @@ export function Question({
   title,
   questions,
   answerOptions,
+  nextPath
 }: Props) {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const navigate = useNavigate();
+  const handleNext = () => {
+    navigate(nextPath); 
+  };
 
   return (
-    <div className="px-1 mt-3 space-y-8">
-      <Card className="w-full max-w-md mx-auto relative">
+    <div className="px-1 space-y-8">
+      <Card className="relative">
         <CardContent className="">
           <div className="absolute -top-7 -left-5 rounded-full bg-white flex items-center justify-center p-4 border-2 border-primary">
             <span>{`${step}/${totalSteps}`}</span>
@@ -55,8 +62,8 @@ export function Question({
           <div className="mt-10 space-y-7">
             <QuestionTitle title={<span>{title}</span>} />
             <div className="bg-gray-100 p-4 rounded-sm space-y-11">
-              {questions.map((question, index) => {
-                return renderQuestionDescription(question, index);
+              {questions.map((question) => {
+                return renderQuestionDescription(question);
               })}
             </div>
           </div>
@@ -75,31 +82,31 @@ export function Question({
       </div>
 
       <div className="mx-4">
-        <Button className="w-full py-8 text-lg bg-gray-700">次へ</Button>
+        <Button className="w-full py-8 text-lg bg-gray-700" onClick={handleNext}>次へ</Button>
       </div>
     </div>
   );
 }
 
-const renderQuestionDescription = (question: Question, index: number) => {
+const renderQuestionDescription = (question: QuestionDescription) => {
   const content = question.content;
   const renderContent = () => {
     switch (content.type) {
       case "list":
-        return <DescriptionOfList items={content.item.items} />;
+        return <DescriptionOfList {...content.item} />;
       case "emphasis":
         return (
-          <DescriptionOfEmphasis emphasisTitle={content.item.emphasisTitle} />
+          <DescriptionOfEmphasis {...content.item} />
         );
       case "table":
-        return <DescriptionOfTable />;
+        return <DescriptionOfTable {...content.item} />;
       default:
         return null;
     }
   };
 
   return (
-    <QuestionDescription key={index} title={question.title}>
+    <QuestionDescription key={question.title} title={question.title}>
       {renderContent()}
     </QuestionDescription>
   );

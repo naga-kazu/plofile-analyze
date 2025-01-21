@@ -1,6 +1,32 @@
-import { AnswerOption, Question } from "./question";
+import { AnswerOption, QuestionDescription } from "./question";
 
-const questions: Question[] = [
+const questions1: QuestionDescription[] = [
+  {
+    title: "基準値",
+    content: {
+      type: "table",
+      item: {
+        header: { title: "アプリ", detail: "マッチ数" },
+        rows: [
+          { title: "With", detail: "40" },
+          { title: "Pairs", detail: "25" },
+          { title: "タップル", detail: "15" },
+          { title: "Tinder", detail: "5" },
+        ],
+        options:["Withの登録後24時間のマッチ数は除く","Tinderの男性ユーザーからのマッチ数は除く"]
+      },
+    },
+  },
+];
+
+const answerOptions1: AnswerOption[] = [
+  { title: "基準値の2倍以上" },
+  { title: "基準値と同程度" },
+  { title: "基準値よりやや少ない" },
+  { title: "基準値の半分以下" },
+];
+
+const questions2: QuestionDescription[] = [
   {
     title: "ファーストメッセージって？",
     content: {
@@ -22,40 +48,66 @@ const questions: Question[] = [
   },
 ];
 
-const questions0: Question[] = [
-  {
-    title: "ファーストメッセージって？",
-    content: {
-      type: "table",
-      item: {
-        rows: [
-          { title: "Title 1", detail: "Detail 1" },
-          { title: "Title 2", detail: "Detail 2" },
-        ],
-      },
-    },
-  },
-];
-
-const answerOptions: AnswerOption[] = [
+const answerOptions2: AnswerOption[] = [
   { title: "80%以上" },
   { title: "60~80%" },
   { title: "40~60%以下" },
   { title: "40%未満" },
 ];
 
-export const questionsValues0 = {
-  step: 1,
-  totalSteps: 5,
-  title: "あなたはファーストメッセージを送りました。返信率はどのくらいですか？",
-  questions: questions0,
-  answerOptions: answerOptions,
-};
+const questions3: QuestionDescription[] = [
+  {
+    title: "ファーストメッセージって？",
+    content: {
+      type: "list",
+      item: {
+        items: [
+          "マッチして最初に送るメッセージのこと",
+          "「ターゲット層に合ったメッセージ」が送れているかわかります。",
+        ],
+      },
+    },
+  },
+  {
+    title: "計算式",
+    content: {
+      type: "emphasis",
+      item: { emphasisTitle: "返信率=返信数÷総マッチ数" },
+    },
+  },
+];
 
-export const questionsValues = {
-  step: 2,
-  totalSteps: 5,
-  title: "あなたはファーストメッセージを送りました。返信率はどのくらいですか？",
-  questions: questions,
-  answerOptions: answerOptions,
-};
+const answerOptions3: AnswerOption[] = [
+  { title: "80%以上" },
+  { title: "60~80%" },
+  { title: "40~60%以下" },
+  { title: "40%未満" },
+];
+
+export const questions=[
+  {
+    title: "1日当たりの平均マッチ数は基準値よりも多いですか？",
+    questions: questions1,
+    answerOptions: answerOptions1,
+  },
+  {
+    title: "あなたはファーストメッセージを送りました。返信率はどのくらいですか？",
+    questions: questions2,
+    answerOptions: answerOptions2,
+  },
+  {
+    title: "バンゲ率はどのくらいですか？",
+    questions: questions3,
+    answerOptions: answerOptions3,
+  },
+  {
+    title: "アポの日程も決まり、いざ当日。相手からいけない連絡が...\nこのようなドタキャン率はどのくらいですか？",
+    questions: questions3,
+    answerOptions: answerOptions3,
+  },
+  {
+    title: "アポの勝率はどのくらいですか？",
+    questions: questions3,
+    answerOptions: answerOptions3,
+  },
+]
