@@ -46,12 +46,14 @@ export default function Top({nextPath}:Props) {
             <div className="text-white text-xl font-bold">LINE限定コンテンツ</div>
           </div>
           <div className="text-primary text-xl text-center">CHECK MATCHING SCORE</div>
-          <CardTitle className="text-5xl text-center flex items-center justify-center">
+          <CardTitle className="text-5xl text-center inline-flex justify-center items-center">
+            <span>
             アプリ攻略診断
-            <FaClipboardList color="rgb(184, 204, 51)" className=" pl-1"/>
+            <FaClipboardList color="rgb(184, 204, 51)" className="mb-3 inline-block"/>
+            </span>
           </CardTitle>
           <CardDescription className="text-center">
-            <p className="text-2xl font-bold underline pb-2">
+            <p className="text-2xl font-bold underline mb-2">
             あなたの課題がすぐわかる
             </p>
             <p >
