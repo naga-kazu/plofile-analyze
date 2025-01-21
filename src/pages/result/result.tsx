@@ -33,7 +33,7 @@ const barData = [
 export default function Result() {
   return (
     <div className="w-full">
-      <div className="my-4 items-center justify-center flex bg-secondary text-secondary-foreground p-4 mx-20 rounded-full border-primary border-2">
+      <div className="mb-4 items-center justify-center flex bg-secondary text-secondary-foreground p-4 mx-20 rounded-full border-primary border-2">
         <h1 className="text-xl font-bold ">診断結果</h1>
       </div>
       <ResultCard title="あなたの運用状態">

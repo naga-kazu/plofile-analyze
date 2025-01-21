@@ -11,7 +11,7 @@ export default function QuizPage() {
   return (
     <BrowserRouter>
       <FixedHeader />
-      <div className="w-full max-w-md min-w-80 mx-auto mt-3 px-4 pt-24 pb-10 bg-background">
+      <div className="w-full max-w-md min-w-80 mx-auto mt-3 px-4 pt-20 pb-10 bg-background">
         <Routes>
           <Route path={BASE_URL} element={<Top nextPath={`${BASE_URL}/question/1`}/>} />
         {questions.map((question, index) => {

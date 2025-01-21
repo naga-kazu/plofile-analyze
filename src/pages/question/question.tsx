@@ -52,7 +52,7 @@ export function Question({
   };
 
   return (
-    <div className="px-1 space-y-8">
+    <div className="px-1 pt-4 space-y-8">
       <Card className="relative">
         <CardContent className="">
           <div className="absolute -top-7 -left-5 rounded-full bg-white flex items-center justify-center p-4 border-2 border-primary">
