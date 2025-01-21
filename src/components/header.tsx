@@ -7,7 +7,7 @@ const FixedHeader = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center">
             <img src={teru_logo} alt="logo" className="w-8 h-8 mr-2 rounded-full" />
-            <h1 className="text-xl font-bold text-gray-800 py-3">てるフォト</h1>
+            <h1 className="text-xl font-bold py-3">てるフォト</h1>
           </div>
       </div>
     </header>

@@ -94,7 +94,7 @@ export default function Result() {
           </div>
           </ResultCard>
           <div className="m-4">
-          <Button size="xl" className="w-full text-lg rounded-full">今すぐ申し込む</Button>
+          <Button size="xl" className="w-full bg-accent text-lg rounded-full text-secondary">課題解決のためのコンテンツを見る</Button>
           </div>
     </div>
   )
