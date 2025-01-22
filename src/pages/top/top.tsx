@@ -53,7 +53,7 @@ export default function Top({nextPath}:Props) {
             </span>
           </CardTitle>
           <CardDescription className="text-center">
-            <p className="text-2xl font-bold underline mb-2">
+            <p className="text-2xl font-black underline mb-2">
             あなたの課題がすぐわかる
             </p>
             <p >
