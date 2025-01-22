@@ -48,7 +48,7 @@ export function Question({
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const navigate = useNavigate();
   const handleNext = () => {
-    navigate(nextPath); 
+    navigate(nextPath);
   };
 
   return (

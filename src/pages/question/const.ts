@@ -1,4 +1,8 @@
 import { AnswerOption, QuestionDescription } from "./question";
+import Tap from "../../assets/tap.webp"
+import With from "../../assets/with.webp"
+import Tin from "../../assets/tin.webp"
+import Pairs from "../../assets/pair.webp"
 
 const questions1: QuestionDescription[] = [
   {
@@ -8,10 +12,10 @@ const questions1: QuestionDescription[] = [
       item: {
         header: { title: "アプリ", detail: "マッチ数" },
         rows: [
-          { title: "With", detail: "40" },
-          { title: "Pairs", detail: "25" },
-          { title: "タップル", detail: "15" },
-          { title: "Tinder", detail: "5" },
+          { title: "With", imgSrc:With, detail: "40" },
+          { title: "Pairs", imgSrc:Pairs, detail: "25" },
+          { title: "タップル", imgSrc:Tap, detail: "15" },
+          { title: "Tinder", imgSrc:Tin, detail: "5" },
         ],
         options:["Withの登録後24時間のマッチ数は除く","Tinderの男性ユーザーからのマッチ数は除く"]
       },
@@ -63,7 +67,7 @@ const questions3: QuestionDescription[] = [
       item: {
         items: [
           "マッチングアプリ以外の連絡先（LINE・Instagram等）を交換すること",
-          "マッチした相手があなたにどのくらい対価値を感じているか？がわかります。",
+          "マッチした相手があなたにどのくらい価値を感じているか？がわかります。",
         ],
       },
     },

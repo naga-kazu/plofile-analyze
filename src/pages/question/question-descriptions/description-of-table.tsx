@@ -2,6 +2,7 @@ import './arrow.css';
 
 export type Row = {
   title: string;
+  imgSrc?:string;
   detail: string;
 };
 
@@ -22,7 +23,9 @@ export function DescriptionOfTable({ header, rows,options }: Props) {
             <div className="absolute inset-x-1/2 transform -translate-x-1/2 arrow mb-1 z-10"></div>
           <div className='absolute top-0 w-full'>
             <div className="flex items-center text-center gap-2 text-sm font-bold">
-              <div className="w-1/2 bg-secondary text-secondary-foreground">{row.title}</div>
+              <div className="w-1/2 bg-secondary text-secondary-foreground flex items-center justify-center">
+                {row.title}<img src={row.imgSrc} alt="ロゴ" className="w-4 h-4 ml-0.5"/>
+              </div>
               <div className="w-1/2 bg-secondary text-secondary-foreground">{row.detail}</div>
             </div>
           </div>

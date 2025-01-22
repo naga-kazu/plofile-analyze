@@ -48,7 +48,7 @@ export default function Top({nextPath}:Props) {
           <div className="text-primary text-xl text-center">CHECK MATCHING SCORE</div>
           <CardTitle className="text-5xl text-center inline-flex justify-center items-center">
             <span>
-            アプリ攻略診断
+            アプリ攻略<br/>診断
             <FaClipboardList color="rgb(184, 204, 51)" className="mb-3 inline-block"/>
             </span>
           </CardTitle>
