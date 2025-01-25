@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             ? `${BASE_URL}/result`
             : `${BASE_URL}/question/${index + 2}`;
             
-        const url = "https://hooks.slack.com/services/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";
+        const url = "https://hooks.slack.com/services/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";
         const handleNext = () => {
           if(nextPath === `${BASE_URL}/result`) {
             fetch(url, {
