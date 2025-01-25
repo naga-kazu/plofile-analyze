@@ -42,14 +42,14 @@ const questions2: QuestionDescription[] = [
         ],
       },
     },
-  },
-  {
-    title: "計算式",
-    content: {
-      type: "emphasis",
-      item: { emphasisTitle: "返信率=返信数÷総マッチ数" },
     },
-  },
+    {
+      title: "計算式",
+      content: {
+        type: "emphasis",
+        item: { emphasisTitle: "返信率=返信数÷総マッチ数" },
+      },
+    },
 ];
 
 const answerOptions2: AnswerOption[] = [
@@ -73,15 +73,10 @@ const questions3: QuestionDescription[] = [
     },
   },
   {
-    title: "これが低い人は？",
+    title: "計算式",
     content: {
-      type: "list",
-      item: { 
-        items: [
-          "テンプレメッセージを使っている",
-          "メッセージに違和感がある可能性あり！",
-        ],
-       },
+      type: "emphasis",
+      item: { emphasisTitle: "バンゲ率=バンゲ数÷総マッチ数" },
     },
   },
 ];
@@ -116,9 +111,9 @@ const questions4: QuestionDescription[] = [
 ];
 
 const answerOptions4: AnswerOption[] = [
-  { title: "80%以上" },
-  { title: "50~80%" },
-  { title: "20~50%" },
+  { title: "60%以上" },
+  { title: "40~60%" },
+  { title: "20~40%" },
   { title: "20%未満" },
 ];
 

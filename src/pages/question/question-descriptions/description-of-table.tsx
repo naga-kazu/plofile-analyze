@@ -32,7 +32,7 @@ export function DescriptionOfTable({ header, rows,options }: Props) {
       </div>
       ))}
       {options && (
-        <div className="text-sm font-normal text-gray-500">
+        <div className="text-[10px] font-normal text-gray-500">
           {options.map((option) => (
             <div key={option}>※{option}</div>
           ))}
