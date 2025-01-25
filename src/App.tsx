@@ -5,7 +5,7 @@ import { questions } from "./pages/question/const";
 import Top from "./pages/top/top";
 import Result from "./pages/result/result";
 
-const BASE_URL = "/plofile-analyze";
+const BASE_URL = "/profile-analyze";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +29,23 @@ const router = createBrowserRouter([
           index === questions.length - 1
             ? `${BASE_URL}/result`
             : `${BASE_URL}/question/${index + 2}`;
+            
+        const url = "https://hooks.slack.com/services/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";
+        const handleNext = () => {
+          if(nextPath === `${BASE_URL}/result`) {
+            fetch(url, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+              },
+              body: new URLSearchParams({
+                payload: JSON.stringify({
+                  text: `診断しました。\nUser: ${navigator.userAgent}`, // Slack Webhookは"text"キーでメッセージを受け取る
+                }),
+              }).toString(),
+            })
+          }
+        };
         return {
           path: `${BASE_URL}/question/${index + 1}`,
           element: (
@@ -36,6 +53,7 @@ const router = createBrowserRouter([
               {...question}
               step={index + 1}
               totalSteps={questions.length}
+              handleNext={handleNext}
               nextPath={nextPath}
             />
           ),

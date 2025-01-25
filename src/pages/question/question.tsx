@@ -34,6 +34,7 @@ export type Props = {
   title: string;
   questions: QuestionDescription[];
   answerOptions: AnswerOption[];
+  handleNext: () => void;
   nextPath: string;
 };
 
@@ -43,13 +44,11 @@ export function Question({
   title,
   questions,
   answerOptions,
-  nextPath
+  handleNext,
+  nextPath,
 }: Props) {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const navigate = useNavigate();
-  const handleNext = () => {
-    navigate(nextPath);
-  };
 
   return (
     <div className="px-1 pt-4 space-y-8">
@@ -82,7 +81,10 @@ export function Question({
       </div>
 
       <div className="mx-4">
-        <Button className="w-full py-8 text-lg bg-gray-700" onClick={handleNext}>次へ</Button>
+        <Button className="w-full py-8 text-lg bg-gray-700" onClick={()=>{
+          handleNext();
+          navigate(nextPath)
+        }}>次へ</Button>
       </div>
     </div>
   );

@@ -12,8 +12,8 @@ const questions1: QuestionDescription[] = [
       item: {
         header: { title: "アプリ", detail: "マッチ数" },
         rows: [
-          { title: "With", imgSrc:With, detail: "40" },
-          { title: "Pairs", imgSrc:Pairs, detail: "25" },
+          { title: "With", imgSrc:With, detail: "20" },
+          { title: "Pairs", imgSrc:Pairs, detail: "20" },
           { title: "タップル", imgSrc:Tap, detail: "15" },
           { title: "Tinder", imgSrc:Tin, detail: "5" },
         ],
@@ -24,7 +24,7 @@ const questions1: QuestionDescription[] = [
 ];
 
 const answerOptions1: AnswerOption[] = [
-  { title: "基準値の2倍以上" },
+  { title: "基準値の1.5倍以上" },
   { title: "基準値と同程度" },
   { title: "基準値よりやや少ない" },
   { title: "基準値の半分以下" },
